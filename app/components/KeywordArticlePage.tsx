@@ -1,4 +1,4 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Native navigation avoids a vinext client-router crash in preview and production. */
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import { keywordArticles, keywordEntry, type KeywordArticleKey } from "./keywordArticles";
 
@@ -6,7 +6,7 @@ export function KeywordArticlePage({ articleKey }: { articleKey: KeywordArticleK
   const article = keywordArticles[articleKey];
   const entry = keywordEntry(articleKey);
   return <><SiteHeader locale="en" route="guides"/><main id="main-content" className="keyword-page shell-wide" lang="zh-CN">
-    <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><Link href="/">Machine Party</Link></li><li><Link href="/guides/">Guides</Link></li><li>{entry.keyword}</li></ol></nav>
+    <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Machine Party</a></li><li><a href="/guides/">Guides</a></li><li>{entry.keyword}</li></ol></nav>
     <header className="keyword-page__header"><p>Verified keyword guide · 核对日期 2026-08-23</p><h1>{entry.title}</h1><div className="keyword-page__term">目标关键词：<strong>{entry.keyword}</strong></div></header>
     <article className="keyword-page__article">
       <section className="keyword-answer" aria-label="直接回答"><span>直接回答</span><p>{article.answer}</p></section>
