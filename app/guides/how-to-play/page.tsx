@@ -1,2 +1,4 @@
-import { ArticlePage } from "../../components/ArticlePage";
-export default function Page(){ return <ArticlePage locale="en"/>; }
+import { KeywordArticlePage } from "../../components/KeywordArticlePage";
+import { keywordMetadata } from "../../components/keywordArticles";
+export const metadata = keywordMetadata("machine-party-guide");
+export default function Page(){ return <KeywordArticlePage articleKey="machine-party-guide"/>; }
